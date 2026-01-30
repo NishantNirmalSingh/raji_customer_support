@@ -1,0 +1,194 @@
+Here is the consolidated, comprehensive text file. I have merged the details from the Wikipedia data, the development history, and the gameplay archive into a single, non-repetitive document optimized for copying and pasting.
+
+---
+
+**Raji: An Ancient Epic – The Complete Master Archive**
+
+### **1. METADATA & GENERAL INFORMATION**
+
+* **Title:** Raji: An Ancient Epic
+* **Developer:** Nodding Heads Games (Pune, Maharashtra, India)
+* **Publisher:** Super.com
+* **Genre:** Action-Adventure / Hack-and-Slash
+* **Perspective:** Isometric / 2.5D
+* **Game Engine:** Unreal Engine 4
+* **Art Style:** Pahari paintings (miniature painting style from Himachal Pradesh/Rajasthan) with medieval Rajasthan-inspired architecture.
+* **ESRB Rating:** T (Teen) – Violence, Blood
+* **Playtime:** 6–8 hours (Story), 10+ hours (Completionist)
+
+**Release History:**
+
+* **Nintendo Switch:** August 18, 2020 (Timed Exclusive)
+* **PC (Steam/Epic/GOG), PS4, Xbox One:** October 15, 2020
+* **Enhanced Edition (PC):** May 2021
+* **PlayStation 5 Upgrade:** April 16, 2024 (Features raytracing, haptic feedback, adaptive triggers, and 3D audio).
+* **Mobile (iOS/Android):** April 5, 2023 (via Netflix Games).
+
+---
+
+### **2. DETAILED PLOT SUMMARY**
+
+**Premise**
+The game is set during a new war between the Devas (Gods) and Asuras (Demons). Humans have forgotten the art of alchemy, making them vulnerable.
+
+**The Prologue**
+Raji is an orphaned circus performer, and Golu is her younger brother and a storyteller. During the Raksha Bandhan festival, demons attack the carnival. Golu is abducted by the demon army. Raji is knocked unconscious and wakes up in the Ruins, chosen by Goddess Durga and Lord Vishnu to save her brother and humanity.
+
+**Chapter Breakdown**
+
+1. **The Ruins:** Raji navigates crumbling temples. She receives the **Trishul** (Trident) from Goddess Durga. She unlocks memories of her childhood while chasing the demons.
+2. **Fortress of Jaidhar:** Raji pursues the demons to a massive Rajput-style fort. She receives the **Sharanga Bow** from Lord Vishnu. At the end of the fort, the Demon Chieftain throws Golu into a magic portal. Raji defeats the **Chieftain**, but Golu is transported to the demon lord Mahabalasura.
+3. **Hiranya Nagari (The Golden City):** Raji arrives in the technologically advanced, heavenly city of Vishnu. The city is corrupted by **Rangda**, a demon queen who has poisoned the water. Raji receives the **Sword and Shield**. She repairs the city's mechanisms and defeats Rangda.
+4. **Land of the Mystics:** Raji is flown by a giant white peacock (Mayura) to this land. She finds the Mystics (sages) turned to stone or dead. She calms the **Naga** (serpent guardian) and confronts Mahabalasura. He steals an ancient scroll from the Mystic Chief and escapes.
+5. **The Thar Desert:** Raji chases Mahabalasura to the desert. She receives the **Sudarshan Chakra** (Vishnu's ultimate weapon).
+
+**The Climax & Ending**
+Raji confronts **Mahabalasura**. He uses clones to distract her while Golu, under a spell, recites a chant from the stolen scroll. This chant opens the gates to the Gods' realm. Mahabalasura ascends to invade the heavens, leaving Golu behind. The game ends on a cliffhanger, with the fate of humanity and the Gods left ambiguous.
+
+**Sequel Status**
+A sequel titled *Raji: Kaliyuga* is currently in development.
+
+---
+
+### **3. CHARACTERS & CAST**
+
+* **Raji (Voiced by Alka Sharma):** The acrobat protagonist.
+* **Golu:** Raji's younger brother, abducted by demons.
+* **Durga (Voiced by Alka Sharma):** Goddess of War, narrator, and Raji’s primary patron.
+* **Vishnu (Voiced by Sourin Chaudhuri):** The Preserver, narrator, initially skeptical of Raji.
+* **Mahabalasura (Voiced by Sourin Chaudhuri):** The main antagonist. A former human Mystic who gained immortality from Lord Brahma and seeks revenge for his imprisonment.
+* **Rangda:** The Demon Queen boss of the Golden City.
+* **The Chieftain:** The brute boss of the Fortress.
+
+---
+
+### **4. GAMEPLAY MECHANICS & COMBAT**
+
+**Movement**
+
+* **Acrobatics:** Wall-running, climbing pillars, shimmying ledges, backflips.
+* **Contextual Actions:** Auto-jump/climb on valid surfaces.
+
+**Divine Weapons**
+
+1. **Trishul (Trident):** Fast melee, good for combos.
+2. **Sharanga Bow:** Ranged attacks, spread shots.
+3. **Sword & Shield:** Defensive capability, blocking, and parrying.
+4. **Sudarshan Chakra:** Late-game AoE (Area of Effect) damage.
+
+**Elemental Favors (God Powers)**
+
+* **Electricity (Durga):** Stun/Chain lightning.
+* **Fire (Vishnu):** Burn damage/Explosions.
+* **Ice (Shiva):** Freezing enemies.
+
+**PS5 Specific Features (Added 2024)**
+
+* **Haptic Feedback:** Vibrations match combat impact.
+* **Adaptive Triggers:** Resistance when drawing the bow.
+* **Graphics:** Raytracing support and lightbar integration.
+
+---
+
+### **5. DEVELOPMENT HISTORY & TRIVIA**
+
+* **Team:** Developed by a core team of 13 people (started with 6).
+* **Funding Struggles:**
+* **Kickstarter (2017):** Failed. Raised £66,000 of the £120,000 goal.
+* **Personal Sacrifice:** Developer Shruti Ghosh sold her apartment to keep the studio running.
+* **Epic Games:** Eventually secured an Unreal Dev Grant ($5 million fund allocation).
+
+
+* **Influences:** *Bastion*, *Journey*, *God of War*, *Ico*, *Dark Souls*.
+* **Cut Content:** Originally planned 3D cutscenes were replaced with 2D shadow puppet animations due to budget constraints. Several puzzles were also removed.
+
+---
+
+### **6. RECEPTION & AWARDS**
+
+* **The Game Awards 2020:** Nominated for "Best Debut Game" (Lost to *Phasmophobia*). This was the first Indian game nominated.
+* **Critical Reception:**
+* Praised for art style, music, and representation of Indian mythology.
+* *Gadgets360 (Akhil Arora):* Praised the sound design and feminist fable narrative.
+* *Waypoint (Adesh Thapliyal):* Criticized the implicit erasure of Muslim influence on the Indian culture represented in the game and placed it in the context of Hindu nationalism.
+
+
+
+---
+
+### **7. TECHNICAL SPECIFICATIONS (PC)**
+
+**Minimum Requirements:**
+
+* **OS:** Windows 7 (64-bit)
+* **CPU:** Intel Core i5-4460 / AMD FX-6300
+* **RAM:** 8 GB
+* **GPU:** GTX 760 / R7 260X (2GB)
+* **Storage:** 6 GB
+
+Recommended:
+
+OS: Windows 10 (64-bit)
+
+Processor: Intel Core i5-7400 / AMD Ryzen 5 1600
+
+Memory: 16 GB RAM
+
+Graphics: NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 480
+
+Storage: 6 GB (SSD recommended)
+
+**Common Technical Issues:**
+
+* Game may crash on low-end GPUs not meeting DX11 requirements.
+* Controller mapping issues on some Windows setups.
+* Save file corruption if the game is forced closed during auto-save.
+
+---
+
+### **8. COMPLETE ACHIEVEMENT/TROPHY LIST (21 Total)**
+
+1. **The Ruins:** Complete Chapter 1.
+2. **The Fortress:** Complete Chapter 2.
+3. **The Golden City:** Complete Chapter 3.
+4. **The Mystics:** Complete Chapter 4.
+5. **The Dream:** Complete the surreal dream sequence.
+6. **Jai Ma Durga:** Acquire the Trishul.
+7. **Bow to the Master:** Acquire the Sharanga Bow.
+8. **Sword & Board:** Acquire the Sword and Shield.
+9. **Chakra:** Acquire the Sudarshan Chakra.
+10. **Favor of the Gods:** Collect all 16 Favor Orbs.
+11. **Avatars of Durga:** Listen to all Durga murals.
+12. **Vishnu’s Tales:** Listen to all Vishnu murals.
+13. **Legend of Shakti:** Listen to the Shakti murals.
+14. **Quick Reflexes:** Complete the wall run section without falling.
+15. **Perfect Balance:** Cross the tightrope without losing balance.
+16. **Why do you run?:** Defeat the Chieftain.
+17. **Rangda's Fury:** Defeat Rangda.
+18. **Asura Samhara:** Defeat Mahabalasura.
+19. **Explorer:** Find all hidden locations.
+20. **Storyteller:** Listen to all narration points.
+21. **Platinum:** Unlock all other trophies.
+
+---
+
+### **9. FREQUENTLY ASKED QUESTIONS (FAQ)**
+
+* **Q: Is the game Open World?**
+* A: No, it is a linear, story-driven game.
+
+
+* **Q: How do I heal?**
+* A: Perform "Finishers" on enemies with low health. There are no health potions.
+
+
+* **Q: What is the "One Shot One Kill" mode?**
+* A: Added in the Enhanced Edition, this mode causes the player to die from a single hit.
+
+
+* **Q: Does it have Multiplayer?**
+* A: No, single-player only.
+
+
+* **Q: Are the myths real?**
+* A: The mythology (Mahabharata/Ramayana context) is real Hindu scripture, but the specific story of Raji and Golu is original fiction.
