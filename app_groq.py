@@ -303,6 +303,7 @@ vectorstore = FAISS.load_local(
 retriever = vectorstore.as_retriever(search_kwargs={"k": 1})
 
 
+
 # =========================================================
 # Memory + Prompt
 # =========================================================
