@@ -261,6 +261,7 @@ def filter_tickets(category, priority, status):
     if priority != "All":
         df = df[df["priority"] == priority]
 
+    
     if status != "All":
         df = df[df["status"] == status]
 
