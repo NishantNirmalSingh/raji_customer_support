@@ -7,7 +7,6 @@ from datetime import datetime
 import re
 import pandas as pd
 
-
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 from langchain_groq import ChatGroq
@@ -146,7 +145,6 @@ def fast_classify_ticket(text):
 
     return "general", "medium"
 
-
 # =========================================================
 # Device Info Extraction
 # =========================================================
@@ -194,7 +192,6 @@ def find_similar_ticket(text):
 
 def update_ticket_memory(text):
     ticket_index.add_texts([text])
-
 
 # =========================================================
 # LLM Setup (Groq)
