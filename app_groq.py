@@ -266,3 +266,234 @@ def filter_tickets(category, priority, status):
         df = df[df["status"] == status]
 
     return df
+
+
+def export_filtered_tickets(category, priority, status):
+    df = filter_tickets(category, priority, status)
+    export_path = "tickets/exported_tickets.csv"
+    df.to_csv(export_path, index=False)
+    return export_path
+
+
+def ticket_analytics():
+    df = load_tickets()
+    if df.empty:
+        return pd.DataFrame({"category": [], "count": []})
+
+    stats = df["category"].value_counts().reset_index()
+    stats.columns = ["category", "count"]
+    return stats
+
+
+# =========================================================
+# Vector Retrieval (RAG)
+# =========================================================
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
+
+vectorstore = FAISS.load_local(
+    "faiss_index",
+    embeddings,
+    allow_dangerous_deserialization=True
+)
+
+retriever = vectorstore.as_retriever(search_kwargs={"k": 1})
+
+
+# =========================================================
+# Memory + Prompt
+# =========================================================
+memory = ConversationBufferMemory()
+
+template = """
+You are a professional customer support assistant for the game "Raji: An Ancient Epic".
+
+Conversation History:
+{history}
+
+User Message:
+{input}
+
+Answer:
+"""
+
+prompt = PromptTemplate(
+    input_variables=["history", "input"],
+    template=template,
+)
+
+conversation = ConversationChain(
+    llm=llm,
+    memory=memory,
+    prompt=prompt,
+    verbose=False
+)
+
+
+# =========================================================
+# Chat Logic
+# =========================================================
+def chat_with_memory(user_message, chat_history):
+
+    docs = retriever.get_relevant_documents(user_message)
+    context = "\n\n".join([doc.page_content for doc in docs])[:900]
+
+    enriched_input = f"""
+Relevant Knowledge:
+{context}
+
+User Question:
+{user_message}
+"""
+
+    response = conversation.predict(input=enriched_input)
+
+    ticket_triggers = ["crash", "error", "bug", "not working", "freeze", "lag", "issue"]
+
+    if any(word in user_message.lower() for word in ticket_triggers):
+
+        category, priority = fast_classify_ticket(user_message)
+        device = extract_device_info(user_message)
+
+        similar_ticket = find_similar_ticket(user_message)
+        ai_fix, confidence = generate_ai_solution(user_message, similar_ticket)
+
+        ticket_id = create_ticket(
+            message=user_message,
+            category=category,
+            priority=priority,
+            device=device,
+            ai_suggestion=ai_fix,
+            confidence=confidence,
+            similar_ticket=similar_ticket
+        )
+
+        update_ticket_memory(user_message)
+
+        response += f"""
+
+🎫 Ticket Created
+Category: {category.upper()}
+Priority: {priority.upper()}
+Device: {device}
+
+🤖 Suggested Fix:
+{ai_fix}
+
+📊 Confidence: {confidence}
+Ticket ID: {ticket_id}
+"""
+
+    chat_history.append({"role": "user", "content": user_message})
+    chat_history.append({"role": "assistant", "content": response})
+
+    return "", chat_history
+
+
+# =========================================================
+# Gradio UI
+# =========================================================
+with gr.Blocks(
+    title="Raji AI Support Assistant",
+    css=CUSTOM_CSS
+) as demo:
+
+    # JavaScript for dark mode toggle
+    gr.HTML("""
+    <script>
+    function setDarkMode(enabled) {
+        if (enabled) {
+            document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
+        }
+    }
+    </script>
+    """)
+
+    with gr.Row():
+        theme_toggle = gr.Dropdown(
+            choices=["Light 🌞", "Dark 🌙"],
+            value="Light 🌞",
+            label="Theme"
+        )
+
+    theme_toggle.change(
+        fn=lambda choice: gr.HTML(
+            f"<script>setDarkMode({str('Dark' in choice).lower()});</script>"
+        ),
+        inputs=theme_toggle,
+        outputs=[]
+    )
+
+    with gr.Tab("🎮 Chat Support"):
+        chatbot = gr.Chatbot(height=420, autoscroll=True)
+        msg = gr.Textbox(placeholder="Describe your issue...", lines=2)
+
+        with gr.Row():
+            ask_btn = gr.Button("🧠 Ask")
+            clear = gr.Button("Clear")
+
+        msg.submit(chat_with_memory, [msg, chatbot], [msg, chatbot])
+        ask_btn.click(chat_with_memory, [msg, chatbot], [msg, chatbot])
+        clear.click(lambda: [], None, chatbot)
+
+    with gr.Tab("📊 Admin Dashboard"):
+        gr.Markdown("## 📊 Ticket Dashboard")
+
+        with gr.Row():
+            category_filter = gr.Dropdown(
+                choices=["All", "bug", "performance", "gameplay", "account", "general"],
+                value="All",
+                label="Category"
+            )
+            priority_filter = gr.Dropdown(
+                choices=["All", "low", "medium", "high"],
+                value="All",
+                label="Priority"
+            )
+            status_filter = gr.Dropdown(
+                choices=["All", "open"],
+                value="All",
+                label="Status"
+            )
+
+        with gr.Row():
+            refresh_btn = gr.Button("🔄 Refresh")
+            export_btn = gr.Button("📥 Export CSV")
+
+        ticket_table = gr.Dataframe(
+            value=load_tickets(),
+            interactive=False,
+            wrap=True
+        )
+
+        analytics_chart = gr.BarPlot(
+            ticket_analytics,
+            x="category",
+            y="count",
+            title="Ticket Volume by Category"
+        )
+
+        download_file = gr.File(label="Download Exported CSV")
+
+        refresh_btn.click(
+            fn=filter_tickets,
+            inputs=[category_filter, priority_filter, status_filter],
+            outputs=ticket_table
+        )
+
+        refresh_btn.click(
+            fn=ticket_analytics,
+            outputs=analytics_chart
+        )
+
+        export_btn.click(
+            fn=export_filtered_tickets,
+            inputs=[category_filter, priority_filter, status_filter],
+            outputs=download_file
+        )
+
+demo.queue().launch()
+
