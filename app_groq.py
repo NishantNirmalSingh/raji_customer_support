@@ -284,7 +284,6 @@ def ticket_analytics():
     stats.columns = ["category", "count"]
     return stats
 
-
 # =========================================================
 # Vector Retrieval (RAG)
 # =========================================================
@@ -330,7 +329,6 @@ conversation = ConversationChain(
     prompt=prompt,
     verbose=False
 )
-
 
 # =========================================================
 # Chat Logic
