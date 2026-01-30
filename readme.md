@@ -141,6 +141,7 @@ Nishant Nirmal
 📞 Phone: +91-7909076369
 🌐 GitHub: https://github.com/NishantNirmalSingh
 🔗 LinkedIn: https://www.linkedin.com/in/nishant-nirmal-2198b52a7
+
 Prerna Prashar
 📧 Email: prernaprashar7170@gmail.com
 📞 Phone: +91-7070207015
@@ -157,10 +158,10 @@ Parnab Ganguli
 📧 Email: parnabganguli@gmail.com
 📞 Phone: +91-9339651964
 🌐 GitHub: https://github.com/parnabganguli
-LinkedIn: https://www.linkedin.com/in/parnab-ganguli-72a0982aa
+🔗 LinkedIn: https://www.linkedin.com/in/parnab-ganguli-72a0982aa
 
 Sanchi preet kaur 
-Email: spk99110@gmail.com
-Phone : 9667033269
-GitHub:https://github.com/sanchi-preet-kaur
-LinkedIn :https://www.linkedin.com/in/anchi-preet-kaur-72a0982aa/
+📧 Email: spk99110@gmail.com
+📞 Phone : 9667033269
+🌐 GitHub:https://github.com/sanchi-preet-kaur
+🔗 LinkedIn :https://www.linkedin.com/in/anchi-preet-kaur-72a0982aa/
