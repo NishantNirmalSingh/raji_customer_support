@@ -158,3 +158,9 @@ Parnab Ganguli
 📞 Phone: +91-9339651964
 🌐 GitHub: https://github.com/parnabganguli
 LinkedIn: https://www.linkedin.com/in/parnab-ganguli-72a0982aa
+
+Sanchi preet kaur 
+Email: spk99110@gmail.com
+Phone : 9667033269
+GitHub:https://github.com/sanchi-preet-kaur
+LinkedIn :https://www.linkedin.com/in/anchi-preet-kaur-72a0982aa/
