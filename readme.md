@@ -134,9 +134,27 @@ Open browser:
 http://127.0.0.1:7860
 
 
-👤 Author
+👤 Authors
+
 Nishant Nirmal
 📧 Email: nishant4245@gmail.com
 📞 Phone: +91-7909076369
 🌐 GitHub: https://github.com/NishantNirmalSingh
 🔗 LinkedIn: https://www.linkedin.com/in/nishant-nirmal-2198b52a7
+Prerna Prashar
+📧 Email: prernaprashar7170@gmail.com
+📞 Phone: +91-7070207015
+🌐 GitHub: https://github.com/Prerna-Prahsar
+🔗 LinkedIn: www.linkedin.com/in/prerna-parashar-15859728a
+
+Arnab Parira
+📧 Email: arnabparira4@gmail.com
+📞 Phone: 9609535863
+🌐 GitHub: https://github.com/arnabparira
+🔗 LinkedIn:https://www.linkedin.com/in/arnab-parira-866b79313
+
+Parnab Ganguli
+📧 Email: parnabganguli@gmail.com
+📞 Phone: +91-9339651964
+🌐 GitHub: https://github.com/parnabganguli
+LinkedIn: https://www.linkedin.com/in/parnab-ganguli-72a0982aa
