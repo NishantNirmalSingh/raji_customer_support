@@ -2,11 +2,15 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 
-# Load documents
+
+# Load documents for uploading data 
+
 with open("data/raji_docs.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
-# Split into chunks
+
+# Split into chunks just like tokenization
+
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,
     chunk_overlap=100
