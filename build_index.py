@@ -17,14 +17,19 @@ splitter = RecursiveCharacterTextSplitter(
 )
 chunks = splitter.split_text(text)
 
+
 print(f"Total chunks created: {len(chunks)}")
 
-# Create embeddings model
+
+
+# Create embeddings model for vector database store
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-# Build FAISS index
+
+# Build FAISS index for embeddings
+
 vectorstore = FAISS.from_texts(chunks, embeddings)
 
 # Save index
