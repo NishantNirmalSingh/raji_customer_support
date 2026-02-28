@@ -146,38 +146,43 @@ def fast_classify_ticket(text):
 
 
 # =========================================================
-# Device Info Extraction
+# Device Info Extraction (Pre-compiled regex for performance)
 # =========================================================
-def extract_device_info(text):
-    patterns = [
-        r"windows\s?\d+",
-        r"rtx\s?\d+",
-        r"gtx\s?\d+",
-        r"\d+\s?gb\s?ram",
-        r"intel\s?i\d",
-        r"ryzen\s?\d",
-        r"laptop",
-        r"pc"
-    ]
+DEVICE_PATTERNS = [
+    re.compile(r"windows\s?\d+"),
+    re.compile(r"rtx\s?\d+"),
+    re.compile(r"gtx\s?\d+"),
+    re.compile(r"\d+\s?gb\s?ram"),
+    re.compile(r"intel\s?i\d"),
+    re.compile(r"ryzen\s?\d"),
+    re.compile(r"laptop"),
+    re.compile(r"pc")
+]
 
+
+def extract_device_info(text):
     matches = []
     text = text.lower()
 
-    for p in patterns:
-        found = re.findall(p, text)
+    for p in DEVICE_PATTERNS:
+        found = p.findall(text)
         matches.extend(found)
 
     return ", ".join(set(matches)) if matches else "not provided"
 
 
 # =========================================================
-# Similar Ticket Engine (FAISS)
+# Shared Embedding Model (Consolidated to save memory)
 # =========================================================
-ticket_embeddings = HuggingFaceEmbeddings(
+shared_embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-ticket_index = FAISS.from_texts(["placeholder"], ticket_embeddings)
+
+# =========================================================
+# Similar Ticket Engine (FAISS)
+# =========================================================
+ticket_index = FAISS.from_texts(["placeholder"], shared_embeddings)
 
 
 def find_similar_ticket(text):
@@ -239,16 +244,30 @@ CONFIDENCE: 0.xx
 
 
 # =========================================================
-# Ticket Dashboard Utilities
+# Ticket Dashboard Utilities (Cached to reduce Disk I/O)
 # =========================================================
+_TICKET_CACHE = {"df": None, "last_mtime": 0}
+
+
 def load_tickets():
     if not os.path.exists(TICKET_FILE):
         return pd.DataFrame(columns=TICKET_COLUMNS)
+
+    try:
+        current_mtime = os.path.getmtime(TICKET_FILE)
+    except OSError:
+        current_mtime = 0
+
+    if _TICKET_CACHE["df"] is not None and current_mtime <= _TICKET_CACHE["last_mtime"]:
+        return _TICKET_CACHE["df"]
 
     df = pd.read_csv(TICKET_FILE)
 
     if "confidence" in df.columns:
         df["confidence"] = df["confidence"].astype(str)
+
+    _TICKET_CACHE["df"] = df
+    _TICKET_CACHE["last_mtime"] = current_mtime
 
     return df
 
@@ -288,13 +307,9 @@ def ticket_analytics():
 # =========================================================
 # Vector Retrieval (RAG)
 # =========================================================
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
-
 vectorstore = FAISS.load_local(
     "faiss_index",
-    embeddings,
+    shared_embeddings,
     allow_dangerous_deserialization=True
 )
 
